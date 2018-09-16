@@ -27,11 +27,12 @@ window.onload = () => {
             let trNode = document.createElement("tr");
             for (let key in obj) {
                 if (key == 'thumbnailUrl') {
+                    var prevNode = trNode.children;
                     let keyNode = document.createElement("td");
                     let imgNode = document.createElement("img");
                     imgNode.src = obj[key];
                     keyNode.appendChild(imgNode);
-                    trNode.appendChild(keyNode);
+                    trNode.insertBefore(keyNode, prevNode[1]);
 
                 } else {
                     let keyNode = document.createElement("td");
